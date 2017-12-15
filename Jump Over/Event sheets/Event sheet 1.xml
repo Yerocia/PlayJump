@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Score" sid="470789558001241" static="0" type="number">0</variable>
+        <variable constant="0" name="Jarak" sid="512236514037806" static="0" type="number">0</variable>
+        <variable constant="0" name="Scroll" sid="210043304981796" static="0" type="number">400</variable>
+        <variable constant="0" name="State" sid="926703576654801" static="0" type="text">Play</variable>
+        <event-block sid="395388550992932">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="992815276304208" type="System">
+                    <param id="0" name="Variable">State</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;Play&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="244456541799311">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="911727559726115" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="672245296428538" type="Player">
+                            <param id="0" name="Animation">&quot;stand&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="128451298887943" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="688523330584931">
+                    <conditions>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="634803467364335" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="294462063027211" type="Player">
+                            <param id="0" name="Animation">&quot;jump&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="280464898231471">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="940051852653772" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="375320198722460" type="Player">
+                            <param id="0" name="Animation">&quot;fall&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="137728558827671">
+                    <conditions>
+                        <condition id="4" name="Is touching object" sid="558447350263289" type="Touch">
+                            <param id="0" name="Object">Kanan</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="867210936835216" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="594766568994765" type="Kanan">
+                            <param id="0" name="Animation">&quot;touch&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="246465833835265">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="825723709461435" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="950330100560588" type="Kanan">
+                            <param id="0" name="Animation">&quot;deff&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="528894188272976">
+                    <conditions>
+                        <condition id="4" name="Is touching object" sid="835667899316745" type="Touch">
+                            <param id="0" name="Object">Kiri</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="641945216221054" type="Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="773134380025459" type="Kiri">
+                            <param id="0" name="Animation">&quot;touch&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="327915320662690">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="648962063256049" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="713948588477563" type="Kiri">
+                            <param id="0" name="Animation">&quot;def&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="945060399834603">
+                    <conditions>
+                        <condition id="15" name="On double-tap" sid="400626991830694" type="Touch" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="165815772492659" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="294102597922082">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="625943046477437" type="Player">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">ViewportBottom(1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="734044342845256" type="Player" />
+                    </actions>
+                </event-block>
+                <event-block sid="869763930585611">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="240779383519363" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Scroll to Y" sid="346896667069177" type="System">
+                            <param id="0" name="Y">Scroll</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="149246152620958">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="925339445570447" type="System">
+                            <param id="0" name="Variable">Jarak</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">ViewportTop(1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="524754448521600" type="System">
+                            <param id="0" name="Object to create">Pijakan</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">random(50,430)</param>
+                            <param id="3" name="Y">ViewportTop(1)</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="598041528783516" type="Pijakan" />
+                        <action id="-9" name="Set value" sid="731356461412875" type="System">
+                            <param id="0" name="Variable">Jarak</param>
+                            <param id="1" name="Value">ViewportTop(1) - random(110,210)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="460077430542927">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="337591092128384" type="Player">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">Scroll</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="587026568359471" type="System">
+                            <param id="0" name="Variable">Scroll</param>
+                            <param id="1" name="Value">Player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="531221502933323">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="893044097354685" type="Pijakan">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">ViewportBottom(1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="539006127653852" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="343993781101974" type="Score">
+                            <param id="0" name="Text">Score</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="163308349429093" type="Pijakan" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
